@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingHorizontal="@dimen/_10sdp"
+        android:paddingVertical="@dimen/_10sdp"
+        android:fillViewport="true"
+        android:background="@color/backGround">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            tools:context=".ui.PopularMovie"
+            >
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_10sdp">
+
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/my_toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    android:background="?attr/colorPrimary"
+                    android:backgroundTint="@color/backGround"
+                    android:elevation="4dp"
+                    android:layout_gravity="center_vertical"
+                    />
+                <androidx.cardview.widget.CardView
+                    android:layout_width="@dimen/_71sdp"
+                    android:layout_height="@dimen/_71sdp"
+                    android:padding="@dimen/_1sdp"
+                    android:layout_gravity="center_horizontal"
+                    android:elevation="@dimen/_20sdp"
+                    android:backgroundTint="@color/red"
+                    app:cardCornerRadius="@dimen/_30sdp"
+                    app:cardElevation="@dimen/_5sdp"
+                    >
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/profile_image"
+                    android:layout_width="@dimen/_70sdp"
+                    android:layout_height="@dimen/_70sdp"
+                    android:layout_gravity="center"
+                    android:elevation="@dimen/_5sdp"
+                    android:src="@drawable/img_logout" />
+                </androidx.cardview.widget.CardView>
+            </FrameLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layoutDirection="ltr"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:text="Trending"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_20sdp"
+                    android:textStyle="bold" />
+
+                <com.weiwangcn.betterspinner.library.BetterSpinner
+                    android:id="@+id/media_type"
+                    android:layout_width="@dimen/_80sdp"
+                    android:layout_height="@dimen/_35sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:textColor="@color/white"
+                    android:drawableTint="@color/white"
+                    android:text="all"
+                    android:gravity="center"
+                    android:background="@drawable/spinner_background"
+                    android:padding="@dimen/_5sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    />
+                <com.weiwangcn.betterspinner.library.BetterSpinner
+                    android:id="@+id/time_window"
+                    android:layout_width="@dimen/_80sdp"
+                    android:layout_height="@dimen/_35sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:textColor="@color/white"
+                    android:text="day"
+                    android:gravity="center"
+                    android:drawableTint="@color/white"
+                    android:background="@drawable/spinner_background"
+                    android:padding="@dimen/_5sdp"
+                    />
+
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/trending_rec"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_250sdp"/>
+
+
+            <com.adroitandroid.chipcloud.ChipCloud
+                android:id="@+id/chip_cloud"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_10sdp"
+                app:selectMode="single"
+                app:deselectedColor="@color/white"
+                app:selectedColor="@color/red"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rec_movie"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+</layout>
